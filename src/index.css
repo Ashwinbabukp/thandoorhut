@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #2596be;
+  --color-brand-gold: #c89525;
+  --color-brand-dark: #0b2936;
+  --color-brand-darker: #061c25;
+  --color-brand-light: #fcfbf7;
+  --color-brand-accent: #196782;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Outfit", sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-scroll: scroll 25s linear infinite;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-darker);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gold);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium Layout Utilities */
+@utility glass-nav {
+  background-color: rgba(6, 28, 37, 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200, 149, 37, 0.15);
+}
+
+@utility glass-card {
+  background: rgba(37, 150, 190, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(252, 251, 247, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@utility glass-card-hover {
+  border-color: rgba(200, 149, 37, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(200, 149, 37, 0.1);
+  transform: translateY(-4px);
+}
+
+@utility gold-glow {
+  text-shadow: 0 0 20px rgba(200, 149, 37, 0.4);
+}
+
+@utility border-gold-gradient {
+  border-image: linear-gradient(to right, #c89525, rgba(200, 149, 37, 0.1)) 1;
+}
+
+@utility section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, .font-serif-display {
+  font-family: var(--font-serif);
+}
+
+body {
+  font-family: var(--font-sans);
+}

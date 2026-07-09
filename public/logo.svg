@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3d078" />
+      <stop offset="50%" stop-color="#c89525" />
+      <stop offset="100%" stop-color="#8a610d" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield/Circle -->
+  <circle cx="50" cy="50" r="46" fill="#0b2936" stroke="url(#goldGrad)" stroke-width="2" />
+  <circle cx="50" cy="50" r="42" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="2 3" opacity="0.6" />
+  
+  <!-- Crown & Flame Motif -->
+  <path d="M 30,65 
+           L 25,45 
+           L 38,52 
+           L 50,30 
+           L 62,52 
+           L 75,45 
+           L 70,65 
+           Z" 
+        fill="url(#goldGrad)" />
+  
+  <!-- Jewels on Crown Points -->
+  <circle cx="25" cy="42" r="2" fill="#fff" />
+  <circle cx="50" cy="27" r="2.5" fill="#fff" />
+  <circle cx="75" cy="42" r="2" fill="#fff" />
+  
+  <!-- Ribbon Base -->
+  <path d="M 28,68 Q 50,73 72,68 C 72,72 65,76 50,76 C 35,76 28,72 28,68 Z" fill="url(#goldGrad)" />
+  
+  <!-- Est 2023 small text -->
+  <text x="50" y="86" fill="#fcfbf7" font-family="'Outfit', sans-serif" font-size="6" font-weight="600" letter-spacing="1" text-anchor="middle">EST. 2023</text>
+</svg>

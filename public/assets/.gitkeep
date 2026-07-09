@@ -1,0 +1,3 @@
+# Placeholder file to keep the assets directory tracked in Git.
+# You can place your custom food images, restaurant logos, and graphic assets here!
+# Once placed, they can be referenced in the React components as "/assets/filename.png".
