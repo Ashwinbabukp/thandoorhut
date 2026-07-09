@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flame, Compass, HelpCircle, Layers, Droplets } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const PROCESS_STEPS = [
   {
@@ -58,7 +59,7 @@ export default function CulinaryProcess() {
         {/* Timeline Layout */}
         <div className="relative border-l border-brand-gold/20 max-w-4xl mx-auto pl-8 md:pl-12 space-y-16">
           {PROCESS_STEPS.map((step, idx) => (
-            <div key={idx} className="relative group">
+            <ScrollReveal key={idx} className="relative group" delay={idx * 150}>
               {/* Timeline marker */}
               <div className="absolute -left-[48px] md:-left-[64px] top-0 w-8 h-8 rounded-full bg-brand-darker border border-brand-gold flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300 shadow-md">
                 {step.icon}
@@ -91,7 +92,7 @@ export default function CulinaryProcess() {
 
               {/* Subtle line connection */}
               <div className="absolute left-[-8px] bottom-0 w-4 h-[1px] bg-brand-gold/10 group-hover:bg-brand-gold/30 transition-colors" />
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 

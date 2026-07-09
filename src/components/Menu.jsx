@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { siteConfig } from '../config/site';
 import { Star, PhoneCall, Heart } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState('mandi');
@@ -56,11 +57,13 @@ export default function Menu() {
 
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
-            <div
+          {filteredItems.map((item, idx) => (
+            <ScrollReveal
               key={item.id}
-              className="glass-card hover:glass-card-hover rounded-3xl rounded-tr-none rounded-bl-none p-6 flex flex-col justify-between group overflow-hidden relative"
+              className="h-full flex"
+              delay={(idx % 3) * 100}
             >
+              <div className="glass-card hover:glass-card-hover rounded-3xl rounded-tr-none rounded-bl-none p-6 flex flex-col justify-between group overflow-hidden relative w-full">
               {/* Card Header Info */}
               <div>
                 <div className="flex justify-between items-start mb-4">
@@ -111,7 +114,8 @@ export default function Menu() {
 
               {/* Decorative Corner Glow */}
               <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-brand-gold/5 rounded-full filter blur-xl group-hover:bg-brand-gold/10 transition-colors pointer-events-none" />
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 

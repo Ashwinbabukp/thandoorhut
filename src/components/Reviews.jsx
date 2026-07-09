@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteConfig } from '../config/site';
 import { Star, Quote } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function Reviews() {
   return (
@@ -22,10 +23,10 @@ export default function Reviews() {
         </div>
 
         {/* Reviews Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
           {/* Left Summary Box (4 Cols) */}
-          <div className="lg:col-span-4 bg-brand-darker border border-brand-gold/10 rounded-3xl p-8 text-center space-y-6">
+          <ScrollReveal className="lg:col-span-4 bg-brand-darker border border-brand-gold/10 rounded-3xl p-8 text-center flex flex-col justify-between space-y-6">
             <h3 className="text-xl font-serif font-bold text-brand-light">Google Reviews</h3>
             <div>
               <span className="text-6xl font-serif font-bold text-brand-gold block">4.5</span>
@@ -57,10 +58,10 @@ export default function Reviews() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Testimonial Feed (8 Cols) */}
-          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ScrollReveal className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6" delay={200}>
             {siteConfig.reviews.map((rev) => (
               <div
                 key={rev.id}
@@ -90,7 +91,7 @@ export default function Reviews() {
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
 
         </div>
 

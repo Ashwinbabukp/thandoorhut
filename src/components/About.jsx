@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChefHat, Flame, ShieldAlert, Sparkles } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function About() {
   const tickerItems = [
@@ -51,7 +52,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Text Detail */}
-          <div className="lg:col-span-6 space-y-6">
+          <ScrollReveal className="lg:col-span-6 space-y-6">
             <span className="text-sm uppercase tracking-widest text-brand-gold font-bold">
               Our Culinary Heritage
             </span>
@@ -78,10 +79,10 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Highlights Grid */}
-          <div className="lg:col-span-6 grid grid-cols-1 gap-6">
+          <ScrollReveal className="lg:col-span-6 grid grid-cols-1 gap-6" delay={200}>
             {features.map((feat, idx) => (
               <div
                 key={idx}
@@ -100,7 +101,7 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

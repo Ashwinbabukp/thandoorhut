@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteConfig } from '../config/site';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
   return (
@@ -21,11 +22,11 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Split Layout */}
+        {/* Contact Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
-          {/* Left Column: Contact Cards (5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+          {/* Left Column (5 Cols) */}
+          <ScrollReveal className="lg:col-span-5 bg-brand-darker border border-brand-gold/15 rounded-3xl p-8 md:p-10 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               <h3 className="text-2xl font-serif font-bold text-brand-light">Restaurant Details</h3>
               
@@ -75,10 +76,10 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          {/* Right Column: High-Fidelity SVG Map (7 Cols) */}
-          <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-brand-gold/15 bg-brand-dark relative shadow-xl min-h-[350px] flex flex-col justify-end">
+          {/* Right Column: Custom Interactive Vector Road Map (7 Cols) */}
+          <ScrollReveal className="lg:col-span-7 rounded-3xl overflow-hidden border border-brand-gold/15 bg-brand-dark relative shadow-xl min-h-[350px] flex flex-col justify-end" delay={200}>
             <svg className="w-full h-full opacity-40 absolute inset-0" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
               {/* Simulated roads */}
               <path d="M -50,100 Q 200,90 450,100" fill="none" stroke="#2596be" strokeWidth="6" />
@@ -105,7 +106,7 @@ export default function Contact() {
             <div className="bg-brand-darker/95 backdrop-blur-md border-t border-brand-light/5 px-6 py-4 relative z-10 w-full text-center">
               <span className="text-xs text-brand-light/70 font-sans block">Athanikal, Kolappuram, Kerala (opposite bypass).</span>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
 

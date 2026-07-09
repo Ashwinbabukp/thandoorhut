@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteConfig } from '../config/site';
 import { Flame, Utensils, ShieldCheck, Check, MessageSquare, Phone, Users, Map } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function Catering() {
   const packages = [
@@ -72,18 +73,21 @@ export default function Catering() {
         {/* Catering Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {pillars.map((pil, idx) => (
-            <div
+            <ScrollReveal
               key={idx}
-              className="glass-card hover:glass-card-hover p-6 rounded-3xl flex flex-col justify-between"
+              className="flex h-full"
+              delay={idx * 100}
             >
-              <div className="space-y-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/25 text-brand-gold flex items-center justify-center">
-                  {pil.icon}
+              <div className="glass-card hover:glass-card-hover p-6 rounded-3xl flex flex-col justify-between w-full">
+                <div className="space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/25 text-brand-gold flex items-center justify-center">
+                    {pil.icon}
+                  </div>
+                  <h3 className="text-lg font-serif font-bold text-brand-light">{pil.title}</h3>
+                  <p className="text-xs text-brand-light/60 font-sans leading-relaxed">{pil.desc}</p>
                 </div>
-                <h3 className="text-lg font-serif font-bold text-brand-light">{pil.title}</h3>
-                <p className="text-xs text-brand-light/60 font-sans leading-relaxed">{pil.desc}</p>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
@@ -96,35 +100,38 @@ export default function Catering() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {packages.map((pkg, idx) => (
-              <div
+              <ScrollReveal
                 key={idx}
-                className="bg-brand-darker border border-brand-gold/15 rounded-3xl p-8 flex flex-col justify-between relative hover:border-brand-gold/40 transition-colors group"
+                className="flex h-full"
+                delay={idx * 150}
               >
-                <div>
-                  <span className="text-xs uppercase tracking-wider text-brand-gold font-bold font-sans block mb-1">{pkg.subtitle}</span>
-                  <h4 className="text-xl font-serif font-bold text-brand-light mb-6 group-hover:text-brand-gold transition-colors">{pkg.title}</h4>
-                  
-                  <ul className="space-y-3.5 mb-8">
-                    {pkg.items.map((item, i) => (
-                      <li key={i} className="flex items-start space-x-3 text-xs text-brand-light/70 font-sans">
-                        <Check className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="bg-brand-darker border border-brand-gold/15 rounded-3xl p-8 flex flex-col justify-between relative hover:border-brand-gold/40 transition-colors group w-full">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-brand-gold font-bold font-sans block mb-1">{pkg.subtitle}</span>
+                    <h4 className="text-xl font-serif font-bold text-brand-light mb-6 group-hover:text-brand-gold transition-colors">{pkg.title}</h4>
+                    
+                    <ul className="space-y-3.5 mb-8">
+                      {pkg.items.map((item, i) => (
+                        <li key={i} className="flex items-start space-x-3 text-xs text-brand-light/70 font-sans">
+                          <Check className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="pt-6 border-t border-brand-light/5 flex items-center justify-between">
-                  <span className="text-xs text-brand-light/45 font-sans font-medium">Estimated Pricing</span>
-                  <span className="text-lg font-serif font-bold text-brand-gold">{pkg.price}</span>
+                  <div className="pt-6 border-t border-brand-light/5 flex items-center justify-between">
+                    <span className="text-xs text-brand-light/45 font-sans font-medium">Estimated Pricing</span>
+                    <span className="text-lg font-serif font-bold text-brand-gold">{pkg.price}</span>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
         {/* Summary Banner & CTA */}
-        <div className="glass-card rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto space-y-6 border border-brand-gold/20 relative overflow-hidden">
+        <ScrollReveal className="glass-card rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto space-y-6 border border-brand-gold/20 relative overflow-hidden" delay={100}>
           <div className="absolute -top-12 -left-12 w-32 h-32 bg-brand-gold/5 rounded-full filter blur-xl" />
           
           <h3 className="text-2xl md:text-3xl font-serif font-bold text-brand-light">Let's Design Your Event Menu</h3>
@@ -150,7 +157,7 @@ export default function Catering() {
               <span>Call Catering Manager</span>
             </a>
           </div>
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>
